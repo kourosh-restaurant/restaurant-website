@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { ShoppingCart, User, UtensilsCrossed } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export function Navbar() {
   return (
@@ -11,8 +12,9 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
             <UtensilsCrossed className="h-6 w-6 text-primary-foreground" />
+            {/* <Image src={"/logo.png"} alt="logo image" height={40} width={40}></Image> */}
           </div>
-          <span className="text-xl font-bold text-foreground">FoodHub</span>
+          <span className="text-xl font-bold text-foreground">رستوران کوروش</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
