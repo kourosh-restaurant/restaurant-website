@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'
 import localFont from 'next/font/local'
 import './globals.css'
+import { Navbar } from '@/components/navbar'
 
 
 export const metadata: Metadata = {
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="fa" dir='rtl'>
       <body className={`${IRANSansXV.variable}`}>
+        <Navbar />
         {children}
         <Analytics />
       </body>

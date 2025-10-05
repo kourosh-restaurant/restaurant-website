@@ -14,7 +14,7 @@ export function Navbar() {
             <UtensilsCrossed className="h-6 w-6 text-primary-foreground" />
             {/* <Image src={"/logo.png"} alt="logo image" height={40} width={40}></Image> */}
           </div>
-          <span className="text-xl font-bold text-foreground">رستوران کوروش</span>
+          <span className="text-xl font-bold text-foreground hover:text-primary duration-75">رستوران کوروش</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
@@ -31,7 +31,7 @@ export function Navbar() {
             href="/restaurant/dashboard"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
           >
-            Dashboard
+            وضعیت سفارش
           </Link>
         </nav>
 
@@ -40,14 +40,14 @@ export function Navbar() {
             <Link href="/cart">
               <ShoppingCart className="h-5 w-5" />
               <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
-                3
+                0
               </span>
             </Link>
           </Button>
           <Button variant="outline" size="sm" asChild className="hidden md:flex bg-transparent">
             <Link href="/login">
               <User className="mr-2 h-4 w-4" />
-              Login
+              ورود
             </Link>
           </Button>
         </div>
