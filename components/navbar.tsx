@@ -19,13 +19,13 @@ export function Navbar() {
 
         <nav className="hidden items-center gap-6 md:flex">
           <Link href="/" className="text-sm font-medium text-foreground transition-colors hover:text-primary">
-            Home
+            خانه
           </Link>
           <Link href="/cart" className="text-sm font-medium text-foreground transition-colors hover:text-primary">
-            Cart
+            منو
           </Link>
           <Link href="/orders" className="text-sm font-medium text-foreground transition-colors hover:text-primary">
-            My Orders
+            درباره ما
           </Link>
           <Link
             href="/restaurant/dashboard"
