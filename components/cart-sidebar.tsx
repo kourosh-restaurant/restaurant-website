@@ -58,7 +58,7 @@ export function CartSidebar({ items, onUpdateQuantity, onRemove }: CartSidebarPr
                     >
                       <Plus className="h-3 w-3" />
                     </Button>
-                    <Button size="icon" variant="ghost" className="h-7 w-7" onClick={() => onRemove(item.id)}>
+                    <Button size="icon" variant="cross" className="h-7 w-7" onClick={() => onRemove(item.id)}>
                       <X className="h-3 w-3" />
                     </Button>
                   </div>

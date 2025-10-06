@@ -14,45 +14,45 @@ import { UtensilsCrossed } from "lucide-react"
 const menuItems = [
   {
     id: "1",
-    name: "Margherita Pizza",
+    name: "چلو جوجه با استخوان",
     description: "Classic pizza with fresh mozzarella, tomato sauce, and basil",
-    price: 12.99,
-    image: "/margherita-pizza.png",
+    price: 120_000,
+    image: "/item1.jpg",
   },
   {
     id: "2",
-    name: "Spaghetti Carbonara",
+    name: "قفقازی",
     description: "Creamy pasta with pancetta, eggs, and parmesan cheese",
-    price: 14.99,
-    image: "/spaghetti-carbonara.png",
+    price: 140_000,
+    image: "/item2.jpg",
   },
   {
     id: "3",
-    name: "Caesar Salad",
+    name: "چنجه گوسفندی",
     description: "Crisp romaine lettuce with caesar dressing and croutons",
-    price: 8.99,
-    image: "/caesar-salad.png",
+    price: 135_000,
+    image: "/item3.jpg",
   },
   {
     id: "4",
-    name: "Tiramisu",
+    name: "چلوکباب شاه عباسی",
     description: "Classic Italian dessert with coffee-soaked ladyfingers",
-    price: 6.99,
-    image: "/classic-tiramisu.png",
+    price: 160_000,
+    image: "/item4.jpg",
   },
   {
     id: "5",
-    name: "Lasagna",
+    name: "زرشک پلو با مرغ",
     description: "Layers of pasta with meat sauce, ricotta, and mozzarella",
-    price: 15.99,
-    image: "/classic-lasagna.png",
+    price: 185_000,
+    image: "/item5.jpg",
   },
   {
     id: "6",
-    name: "Bruschetta",
+    name: "سینی مخصوص سرآشپز",
     description: "Toasted bread topped with tomatoes, garlic, and olive oil",
-    price: 7.99,
-    image: "/classic-bruschetta.png",
+    price: 200_000,
+    image: "/item6.jpg",
   },
 ]
 
@@ -65,10 +65,7 @@ interface CartItem {
 
 
 export default function HomePage() {
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    { id: "1", name: "Margherita Pizza", price: 12.99, quantity: 1 },
-    { id: "2", name: "Spaghetti Carbonara", price: 14.99, quantity: 2 },
-  ])
+  const [cartItems, setCartItems] = useState<CartItem[]>([])
 
   const handleAddToCart = (item: (typeof menuItems)[0]) => {
     setCartItems((prev) => {
