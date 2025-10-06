@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/navbar"
+
 import { OrderCard } from "@/components/order-card"
 
 const orders = [
@@ -47,7 +47,6 @@ const orders = [
 export default function OrdersPage() {
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main className="container mx-auto px-4 py-8">
         <h1 className="mb-8 text-3xl font-bold text-foreground">My Orders</h1>
 

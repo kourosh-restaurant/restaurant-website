@@ -21,9 +21,9 @@ export function Navbar() {
           <Link href="/" className="text-sm font-medium text-foreground transition-colors hover:text-primary">
             خانه
           </Link>
-          <Link href="/cart" className="text-sm font-medium text-foreground transition-colors hover:text-primary">
+          {/* <Link href="/cart" className="text-sm font-medium text-foreground transition-colors hover:text-primary">
             منو
-          </Link>
+          </Link> */}
           <Link href="/orders" className="text-sm font-medium text-foreground transition-colors hover:text-primary">
             درباره ما
           </Link>

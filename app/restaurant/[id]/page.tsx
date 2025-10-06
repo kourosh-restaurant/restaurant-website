@@ -90,7 +90,6 @@ export default function RestaurantPage() {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <main className="container mx-auto px-4 py-8">
         <Button variant="ghost" asChild className="mb-6">
           <Link href="/">
