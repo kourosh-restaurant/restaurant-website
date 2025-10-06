@@ -1,5 +1,6 @@
 "use client"
 
+import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import { useCart } from '@/context/CartContext'
 import { ShoppingCart, User, UtensilsCrossed } from "lucide-react"
@@ -8,6 +9,12 @@ import Image from "next/image"
 
 export function Navbar() {
   const { cartItems, updateQuantity, removeItem, clearCart } = useCart()
+  const [cartItem, setCartItem] = useState(0)
+
+  useEffect(() => {
+    const total = cartItems.reduce((sum, item) => sum + item.quantity, 0)
+    setCartItem(total)
+  }, [cartItems])
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -38,8 +45,8 @@ export function Navbar() {
           <Button variant="ghost" size="icon" asChild className="relative">
             <Link href="/cart">
               <ShoppingCart className="h-5 w-5" />
-              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
-                { }
+              <span className={`${cartItem === 0 ? 'hidden' : 'flex'} absolute -right-1 -top-1 h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground`}>
+                {cartItem}
               </span>
             </Link>
           </Button>
@@ -54,3 +61,4 @@ export function Navbar() {
     </header>
   )
 }
+
