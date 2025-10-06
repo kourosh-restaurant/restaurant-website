@@ -102,11 +102,17 @@ export default function HomePage() {
           <p className="text-lg text-muted-foreground">
             آدرس:مازندران، نوشهر، میدان شموشک، روبروی باغ اکولوژی، جنب هایپر جانبو
           </p>
+          <div className="flex gap-4">
+            <div className="relative flex items-center justify-center">
+              <span className="absolute inline-flex h-5 w-5 rounded-full bg-green-300 opacity-75 animate-ping"></span>
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
+            </div>
+            <p className="text-sm">سفارش میپذیریم</p>
+          </div>
         </div>
+
         <div className="min-h-screen">
-
           <main className="container mx-auto px-4 py-8">
-
             <div className="grid gap-8 lg:grid-cols-3">
               <div className="lg:col-span-2">
                 <h2 className="mb-6 text-2xl font-bold text-foreground">منو رستوران</h2>
