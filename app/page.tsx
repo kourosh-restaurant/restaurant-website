@@ -8,6 +8,7 @@ import { Navbar } from "@/components/navbar"
 import { MenuItemCard } from "@/components/menu-item-card"
 import { CartSidebar } from "@/components/cart-sidebar"
 import { Button } from "@/components/ui/button"
+import { UtensilsCrossed } from "lucide-react"
 
 
 const menuItems = [
@@ -95,7 +96,9 @@ export default function HomePage() {
     <div className="min-h-screen">
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8 rounded-xl bg-gradient-to-r from-primary/10 to-accent/10 p-12 flex flex-col gap-5">
-          <h1 className="mb-2 text-4xl font-bold text-foreground text-balance">خوشمزگی با اصالت ایرانی!</h1>
+          <h1 className="mb-2 text-4xl font-bold text-foreground text-balance flex gap-2 items-center">خوشمزگی با اصالت ایرانی
+            <UtensilsCrossed className="h-10 w-10 text-primary" />
+          </h1>
           <p className="text-lg text-muted-foreground">
             آدرس:مازندران، نوشهر، میدان شموشک، روبروی باغ اکولوژی، جنب هایپر جانبو
           </p>
@@ -106,7 +109,7 @@ export default function HomePage() {
 
             <div className="grid gap-8 lg:grid-cols-3">
               <div className="lg:col-span-2">
-                <h2 className="mb-6 text-2xl font-bold text-foreground">منو</h2>
+                <h2 className="mb-6 text-2xl font-bold text-foreground">منو رستوران</h2>
                 <div className="grid gap-4">
                   {menuItems.map((item) => (
                     <MenuItemCard key={item.id} {...item} onAddToCart={() => handleAddToCart(item)} />
@@ -120,8 +123,6 @@ export default function HomePage() {
             </div>
           </main>
         </div>
-
-        {/* </div> */}
       </main>
     </div>
   )
