@@ -4,6 +4,8 @@ import { X, Minus, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { useRouter } from 'next/navigation';
+
 
 interface CartItem {
   id: string
@@ -22,6 +24,13 @@ export function CartSidebar({ items, onUpdateQuantity, onRemove }: CartSidebarPr
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
   const deliveryFee = 20_000
   const total = subtotal + deliveryFee
+
+  const router = useRouter();
+
+  const paymentHandleClick = () => {
+    router.push('/cart');
+  };
+
 
   return (
     <Card className="sticky top-20 h-fit">
@@ -83,7 +92,7 @@ export function CartSidebar({ items, onUpdateQuantity, onRemove }: CartSidebarPr
             <span className="text-primary">{total.toFixed(2)}تومان</span>
           </div>
         </div>
-        <Button className="w-full" size="lg" disabled={items.length === 0}>
+        <Button onClick={paymentHandleClick} className="w-full" size="lg" disabled={items.length === 0}>
           پرداخت
         </Button>
       </CardFooter>

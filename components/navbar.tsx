@@ -1,18 +1,20 @@
 "use client"
 
 import Link from "next/link"
+import { useCart } from '@/context/CartContext'
 import { ShoppingCart, User, UtensilsCrossed } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
 export function Navbar() {
+  const { cartItems, updateQuantity, removeItem, clearCart } = useCart()
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
             <UtensilsCrossed className="h-6 w-6 text-primary-foreground" />
-            {/* <Image src={"/logo.png"} alt="logo image" height={40} width={40}></Image> */}
           </div>
           <span className="text-xl font-bold text-foreground hover:text-primary duration-75">رستوران کوروش</span>
         </Link>
@@ -21,9 +23,6 @@ export function Navbar() {
           <Link href="/" className="text-sm font-medium text-foreground transition-colors hover:text-primary">
             خانه
           </Link>
-          {/* <Link href="/cart" className="text-sm font-medium text-foreground transition-colors hover:text-primary">
-            منو
-          </Link> */}
           <Link href="/orders" className="text-sm font-medium text-foreground transition-colors hover:text-primary">
             درباره ما
           </Link>
@@ -40,7 +39,7 @@ export function Navbar() {
             <Link href="/cart">
               <ShoppingCart className="h-5 w-5" />
               <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
-                0
+                { }
               </span>
             </Link>
           </Button>
