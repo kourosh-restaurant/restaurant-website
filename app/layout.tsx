@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/next'
 import localFont from 'next/font/local'
 import './globals.css'
 import { Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
 
 
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Analytics />
+        <Footer />
       </body>
     </html>
   )
