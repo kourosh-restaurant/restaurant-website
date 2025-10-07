@@ -5,6 +5,7 @@ import { MenuItemCard } from "@/components/menu-item-card"
 import { CartSidebar } from "@/components/cart-sidebar"
 import { UtensilsCrossed } from "lucide-react"
 import { useCart } from '@/context/CartContext'
+import dynamic from "next/dynamic";
 
 const menuItems = [
   {
@@ -58,6 +59,9 @@ interface CartItem {
   quantity: number
 }
 
+const Map = dynamic(() => import("@/components/map"), {
+  ssr: false,
+});
 
 export default function HomePage() {
   const { cartItems, addToCart, updateQuantity, removeItem } = useCart()
@@ -101,6 +105,9 @@ export default function HomePage() {
               onRemove={removeItem}
             />
           </div>
+        </div>
+        <div className="mt-20">
+          <Map />
         </div>
       </main>
     </div>
