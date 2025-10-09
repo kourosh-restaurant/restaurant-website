@@ -3,6 +3,7 @@
 import { UtensilsCrossed } from "lucide-react"
 import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button"
+import ImageCarousel from "@/components/card-swiper";
 
 
 
@@ -15,7 +16,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <main className="container mx-auto px-4 py-8">
-        <div className="mb-8 bg-[url(/banner.jpg)] bg-cover rounded-xl">
+        <section className="mb-8 bg-[url(/banner.jpg)] bg-cover rounded-xl">
           <div className="backdrop-brightness-45 p-12 rounded-xl flex flex-col gap-5">
             <h1 className="text-4xl text-white font-bold flex gap-2 items-center">
               خوشمزگی با اصالت ایرانی
@@ -33,10 +34,17 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-        </div>
-        <div className="mt-20">
+        </section>
+
+        <section>
+          <h3 className="text-3xl font-bold text-primary py-5">غذاهای محبوب</h3>
+          <ImageCarousel />
+        </section>
+
+
+        <section className="mt-20">
           <Map />
-        </div>
+        </section>
       </main>
     </div>
   )
