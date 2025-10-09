@@ -83,29 +83,6 @@ export default function HomePage() {
             <p className="text-sm">سفارش میپذیریم</p>
           </div>
         </div>
-
-        <div className="grid gap-8 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            <h2 className="mb-6 text-2xl font-bold">منوی رستوران</h2>
-            <div className="grid gap-4">
-              {menuItems.map((item) => (
-                <MenuItemCard
-                  key={item.id}
-                  {...item}
-                  onAddToCart={() => addToCart(item)}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="lg:col-span-1">
-            <CartSidebar
-              items={cartItems}
-              onUpdateQuantity={updateQuantity}
-              onRemove={removeItem}
-            />
-          </div>
-        </div>
         <div className="mt-20">
           <Map />
         </div>

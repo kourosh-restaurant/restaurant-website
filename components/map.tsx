@@ -9,10 +9,8 @@ export default function Map() {
     const mapContainerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        // Only initialize after the container div exists
         if (!mapContainerRef.current || mapRef.current) return;
 
-        // Create the map safely
         const map = L.map(mapContainerRef.current, {
             center: [36.64732119176482, 51.523664430608655],
             zoom: 13,
@@ -24,13 +22,12 @@ export default function Map() {
                 '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }).addTo(map);
 
-        // Add a marker
         L.marker([36.64732119176482, 51.5236644306086559]).addTo(map).bindPopup(" رستوران کوروش📍").openPopup();
 
         mapRef.current = map;
 
         return () => {
-            map.remove(); // clean up when unmounted
+            map.remove();
             mapRef.current = null;
         };
     }, []);
