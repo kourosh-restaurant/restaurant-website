@@ -1,90 +1,37 @@
 "use client"
 
-import { useState } from "react"
-import { MenuItemCard } from "@/components/menu-item-card"
-import { CartSidebar } from "@/components/cart-sidebar"
 import { UtensilsCrossed } from "lucide-react"
-import { useCart } from '@/context/CartContext'
 import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button"
 
-const menuItems = [
-  {
-    id: "1",
-    name: "چلو جوجه با استخوان",
-    description: "300گرم برنج، 200گرم جوجه با استخوان",
-    price: 120_000,
-    image: "/item1.jpg",
-  },
-  {
-    id: "2",
-    name: "قفقازی",
-    description: "300گرم برنج، 150گرم سلطانی، 150گرم سینه مرغ",
-    price: 140_000,
-    image: "/item2.jpg",
-  },
-  {
-    id: "3",
-    name: "چنجه گوسفندی",
-    description: "300گرم برنج، 200گرم چنجه گوسفندی",
-    price: 135_000,
-    image: "/item3.jpg",
-  },
-  {
-    id: "4",
-    name: "چلوکباب شاه عباسی",
-    description: "300گرم برنج، 150گرم سینه مرغ، 150گرم کباب گوشت",
-    price: 160_000,
-    image: "/item4.jpg",
-  },
-  {
-    id: "5",
-    name: "زرشک پلو با مرغ",
-    description: "300گرم برنج، 200گرم ران مرغ",
-    price: 185_000,
-    image: "/item5.jpg",
-  },
-  {
-    id: "6",
-    name: "سینی مخصوص سرآشپز",
-    description: "500گرم برنج، 100گرم سلطانی، 100گرم جوجه، 100گرم برگ",
-    price: 200_000,
-    image: "/item6.jpg",
-  },
-]
 
-interface CartItem {
-  id: string
-  name: string
-  price: number
-  quantity: number
-}
 
 const Map = dynamic(() => import("@/components/map"), {
   ssr: false,
 });
 
 export default function HomePage() {
-  const { cartItems, addToCart, updateQuantity, removeItem } = useCart()
 
   return (
     <div className="min-h-screen">
       <main className="container mx-auto px-4 py-8">
-        <div className="mb-8 rounded-xl bg-gradient-to-r from-primary/10 to-accent/10 p-12 flex flex-col gap-5">
-          <h1 className="text-4xl font-bold flex gap-2 items-center">
-            خوشمزگی با اصالت ایرانی
-            <UtensilsCrossed className="h-10 w-10 text-primary" />
-          </h1>
-          <p className="text-lg text-muted-foreground"> آدرس: مازندران، نوشهر، میدان شموشک، روبروی باغ اکولوژی، جنب هایپر جانبو </p>
-          <div className="flex gap-4 items-center">
-            <div className="relative flex items-center justify-center">
-              <span className="absolute inline-flex h-5 w-5 rounded-full bg-green-300 opacity-75 animate-ping"></span>
-              <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
+        <div className="mb-8 bg-[url(/banner.jpg)] bg-cover rounded-xl">
+          <div className="backdrop-brightness-45 p-12 rounded-xl flex flex-col gap-5">
+            <h1 className="text-4xl text-white font-bold flex gap-2 items-center">
+              خوشمزگی با اصالت ایرانی
+              <UtensilsCrossed className="h-10 w-10 text-primary" />
+            </h1>
+            <p className="text-lg text-muted"> آدرس: مازندران، نوشهر، میدان شموشک، روبروی باغ اکولوژی، جنب هایپر جانبو </p>
+            <div className="flex gap-4 items-center">
+              <div className="relative flex items-center justify-center">
+                <span className="absolute inline-flex h-5 w-5 rounded-full bg-green-300 opacity-75 animate-ping"></span>
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
+              </div>
+              <p className="text-sm text-white">سفارش میپذیریم</p>
+              <Button variant={"default"} className="cursor-pointer">
+                منو رستوران
+              </Button>
             </div>
-            <p className="text-sm">سفارش میپذیریم</p>
-            <Button variant={"default"} className="cursor-pointer">
-              منو رستوران
-            </Button>
           </div>
         </div>
         <div className="mt-20">
