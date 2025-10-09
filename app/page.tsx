@@ -6,6 +6,7 @@ import { CartSidebar } from "@/components/cart-sidebar"
 import { UtensilsCrossed } from "lucide-react"
 import { useCart } from '@/context/CartContext'
 import dynamic from "next/dynamic";
+import { Button } from "@/components/ui/button"
 
 const menuItems = [
   {
@@ -75,12 +76,15 @@ export default function HomePage() {
             <UtensilsCrossed className="h-10 w-10 text-primary" />
           </h1>
           <p className="text-lg text-muted-foreground"> آدرس: مازندران، نوشهر، میدان شموشک، روبروی باغ اکولوژی، جنب هایپر جانبو </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             <div className="relative flex items-center justify-center">
               <span className="absolute inline-flex h-5 w-5 rounded-full bg-green-300 opacity-75 animate-ping"></span>
               <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
             </div>
             <p className="text-sm">سفارش میپذیریم</p>
+            <Button variant={"default"} className="cursor-pointer">
+              منو رستوران
+            </Button>
           </div>
         </div>
         <div className="mt-20">

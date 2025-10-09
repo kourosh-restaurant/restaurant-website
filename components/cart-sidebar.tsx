@@ -84,7 +84,7 @@ export function CartSidebar({ items, onUpdateQuantity, onRemove }: CartSidebarPr
             <span className="font-medium text-foreground">{subtotal.toFixed(2)}تومان</span>
           </div>
           <div className="flex justify-between text-sm">
-            <span className="text-muted-foreground">هزینه غذا</span>
+            <span className="text-muted-foreground">هزینهء ارسال</span>
             <span className="font-medium text-foreground">{deliveryFee.toFixed(2)}تومان</span>
           </div>
           <div className="flex justify-between border-t border-border pt-2 font-semibold">

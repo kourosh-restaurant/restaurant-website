@@ -24,8 +24,8 @@ export function MenuItemCard({ name, description, price, image, onAddToCart }: M
             <p className="mb-3 text-sm text-muted-foreground line-clamp-2">{description}</p>
             <div className="flex items-center justify-between">
               <span className="text-lg font-bold text-primary">{price.toFixed(2)}تومان</span>
-              <Button size="sm" onClick={onAddToCart} className="gap-1">
-                اضافه کردن
+              <Button size="sm" onClick={onAddToCart} className="gap-1 cursor-pointer">
+                افزودن
                 <Plus className="h-4 w-4" />
               </Button>
             </div>

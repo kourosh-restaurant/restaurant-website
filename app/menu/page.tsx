@@ -5,6 +5,7 @@ import { CartSidebar } from "@/components/cart-sidebar"
 import { UtensilsCrossed } from "lucide-react"
 import { useCart } from '@/context/CartContext'
 import dynamic from "next/dynamic";
+import { Button } from "@/components/ui/button"
 
 const menuItems = [
     {
