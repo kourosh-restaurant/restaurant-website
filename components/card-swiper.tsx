@@ -43,7 +43,7 @@ const ResponsiveCarousel: React.FC = () => {
                         height={300}
                         width={300}
                     />
-                    <span className="absolute text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden group-hover:inline-block">
+                    <span className="absolute font-bold text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden group-hover:inline-block">
                         {nameOfFood[n]}
                     </span>
                 </SwiperSlide>
