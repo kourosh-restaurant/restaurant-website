@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
     return (
@@ -8,7 +9,15 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {/* Brand Section */}
                     <div className="space-y-4">
-                        <h3 className="text-xl font-bold text-primary">رستوران کوروش</h3>
+                        <div className="flex gap-2 justify-start items-center">
+                            <Image
+                                src={"/logo.png"}
+                                height={70}
+                                width={70}
+                                alt="logo-image"
+                            />
+                            <h3 className="text-xl font-bold text-primary">رستوران کوروش</h3>
+                        </div>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                             از رستوران‌ مورد علاقه‌تان غذای خوشمزه سفارش دهید و درب منزل تحویل بگیرید
                         </p>
