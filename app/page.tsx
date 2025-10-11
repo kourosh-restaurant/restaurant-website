@@ -4,6 +4,7 @@ import { UtensilsCrossed } from "lucide-react"
 import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button"
 import ImageCarousel from "@/components/card-swiper";
+import Image from "next/image";
 
 
 
@@ -36,11 +37,26 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section>
+        <section className="mt-20">
           <h3 className="text-3xl font-bold text-primary py-5">غذاهای محبوب</h3>
           <ImageCarousel />
         </section>
 
+        <section className="flex justify-between items-start mt-20">
+          <div>
+            <h3 className="text-3xl font-bold text-primary py-5">چرا آشپزخانه کوروش</h3>
+            <p></p>
+          </div>
+          <div className="bg-primary pr-4 hover:pr-36 duration-200 rounded-xl">
+            <Image 
+              className="rounded-lg backdrop:opacity-25" 
+              src={"/caesar-salad.png"} 
+              height={500} 
+              width={300} 
+              alt="caesar-salad-image"
+            />
+          </div>
+        </section>
 
         <section className="mt-20">
           <Map />
