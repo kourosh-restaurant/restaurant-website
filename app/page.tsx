@@ -42,12 +42,12 @@ export default function HomePage() {
           <ImageCarousel />
         </section>
 
-        <section className="flex justify-between items-start mt-20">
+        <section className="flex justify-around items-start mt-20 flex-col sm:flex-row gap-8">
           <div>
             <h3 className="text-3xl font-bold text-primary py-5">چرا آشپزخانه کوروش</h3>
-            <p></p>
+            <p className="max-w-96 tracking-wide leading-8 text-md sm:text-lg font-semibold">رستوران کوروش با افتخار ارائه‌دهنده‌ی غذاهای اصیل ایرانی با بالاترین کیفیت و طعمی ماندگار است. ما با استفاده از مواد اولیه تازه و مرغوب، غذاهایی تهیه می‌کنیم که هم خوش‌طعم‌اند و هم سالم. هدف ما، خلق تجربه‌ای دل‌انگیز از هر وعده غذایی برای شماست — چه در محیط گرم و صمیمی رستوران ما غذا میل کنید، چه سفارش خود را به‌صورت بیرون‌بر دریافت کنید.</p>
           </div>
-          <div className="bg-primary pr-4 hover:pr-36 duration-200 rounded-xl">
+          <div className="bg-primary pr-4 hover:pr-8 duration-200 rounded-xl">
             <Image 
               className="rounded-lg backdrop:opacity-25" 
               src={"/caesar-salad.png"} 
