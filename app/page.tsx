@@ -62,10 +62,10 @@ export default function HomePage() {
           <div className="bg-primary pr-4 hover:pr-8 duration-200 rounded-xl">
             <Image 
               className="rounded-lg backdrop:opacity-25" 
-              src={"/caesar-salad.png"} 
+              src={"/kebab.avif"} 
               height={500}
               width={300} 
-              alt="caesar-salad-image"
+              alt="lamb-shish-kebab-image"
             />
           </div>
           <div>
