@@ -1,10 +1,11 @@
 "use client"
 
-import { UtensilsCrossed } from "lucide-react"
+import { BringToFront, CreditCard, Flame, ListCheck, Truck, UtensilsCrossed } from "lucide-react"
 import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button"
 import ImageCarousel from "@/components/card-swiper";
 import Image from "next/image";
+import { CurvedSteps } from "@/components/step-progress";
 
 
 
@@ -13,6 +14,34 @@ const Map = dynamic(() => import("@/components/map"), {
 });
 
 export default function HomePage() {
+
+  const steps = [
+    {
+      id: 1,
+      label: "ثبت سفارش",
+      icon: <BringToFront className="text-primary"/>,
+    },
+    {
+      id: 2,
+      label: "پرداخت",
+      icon: <CreditCard className="text-primary"/>,
+    },
+    {
+      id: 3,
+      label: "تایید سفارش",
+      icon: <ListCheck className="text-primary"/>,
+    },
+    {
+      id: 4,
+      label: "آماده سازی سفارش",
+      icon: <Flame className="text-primary"/>,
+    },
+    {
+      id: 5,
+      label: "ارسال سفارش",
+      icon: <Truck className="text-primary"/>
+    },
+  ]
 
   return (
     <div className="min-h-screen">
@@ -80,9 +109,15 @@ export default function HomePage() {
         </section>
 
         <section className="mt-20">
+          <h3 className="text-3xl font-bold text-primary py-5">فرایند آشپزخانه ما</h3>
+          <CurvedSteps steps={steps}/>
+        </section>
+
+        <section className="mt-20">
           <Map />
         </section>
       </main>
     </div>
   )
 }
+
