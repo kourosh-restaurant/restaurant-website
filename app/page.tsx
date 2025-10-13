@@ -1,11 +1,11 @@
 "use client"
 
-import { BringToFront, CreditCard, Flame, ListCheck, Truck, UtensilsCrossed } from "lucide-react"
+import { ClipboardCheck, DollarSign, Flame, ListCheck, Truck, UtensilsCrossed } from "lucide-react"
 import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button"
 import ImageCarousel from "@/components/card-swiper";
 import Image from "next/image";
-import { CurvedSteps } from "@/components/step-progress";
+import { VerticalProcessFlow } from "@/components/vertical-process-flow";
 
 
 
@@ -15,33 +15,36 @@ const Map = dynamic(() => import("@/components/map"), {
 
 export default function HomePage() {
 
-  const steps = [
-    {
-      id: 1,
-      label: "ثبت سفارش",
-      icon: <BringToFront className="text-primary"/>,
-    },
-    {
-      id: 2,
-      label: "پرداخت",
-      icon: <CreditCard className="text-primary"/>,
-    },
-    {
-      id: 3,
-      label: "تایید سفارش",
-      icon: <ListCheck className="text-primary"/>,
-    },
-    {
-      id: 4,
-      label: "آماده سازی سفارش",
-      icon: <Flame className="text-primary"/>,
-    },
-    {
-      id: 5,
-      label: "ارسال سفارش",
-      icon: <Truck className="text-primary"/>
-    },
-  ]
+
+const processSteps = [
+  {
+    id: 1,
+    title: "ثبت سفارش",
+    icon: <ClipboardCheck className="text-primary" width={40} height={50}/>
+  },
+  {
+    id: 2,
+    title: "پرداخت",
+    icon: <DollarSign className="text-primary" width={40} height={50}/>
+  },
+  {
+    id: 3,
+    title: "تایید سفارش",
+    icon: <ListCheck className="text-primary" width={40} height={50}/>
+  },
+  {
+    id: 4,
+    title: "آماده سازی سفارش",
+    icon: <Flame className="text-primary" width={40} height={50}/>
+  },
+  {
+    id: 5,
+    title: "ارسال سفارش",
+    icon: <Truck className="text-primary" width={40} height={40}/>
+  },
+]
+
+
 
   return (
     <div className="min-h-screen">
@@ -110,7 +113,7 @@ export default function HomePage() {
 
         <section className="mt-20">
           <h3 className="text-3xl font-bold text-primary py-5">فرایند آشپزخانه ما</h3>
-          <CurvedSteps steps={steps}/>
+          <VerticalProcessFlow steps={processSteps} />
         </section>
 
         <section className="mt-20">
