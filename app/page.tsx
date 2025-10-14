@@ -7,6 +7,7 @@ import ImageCarousel from "@/components/card-swiper";
 import Image from "next/image";
 import { VerticalProcessFlow } from "@/components/vertical-process-flow";
 import ParagraphLoadMore from "@/components/paragraph-loadmore";
+import Contactus from "@/components/contactus";
 
 
 
@@ -135,8 +136,13 @@ const processSteps = [
         </section>
 
         <section className="mt-20">
+          <Contactus />
+        </section>
+
+        <section className="mt-20">
           <Map />
         </section>
+
       </main>
     </div>
   )
