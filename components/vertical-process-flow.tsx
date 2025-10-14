@@ -1,11 +1,13 @@
 "use client"
 
+import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 
 interface Step {
   id: number
   title: string
   icon?: React.ReactNode
+  image: string
 }
 
 interface VerticalProcessFlowProps {
@@ -75,7 +77,7 @@ export function VerticalProcessFlow({ steps }: VerticalProcessFlowProps) {
           className="relative mb-48 last:mb-0"
         >
           {/* Step Content */}
-          <div className="flex items-start gap-8">
+          <div className="flex items-center justify-around gap-8 flex-col md:flex-row">
             {/* Circle Marker */}
             <div className="relative flex-shrink-0">
               <div
@@ -122,6 +124,7 @@ export function VerticalProcessFlow({ steps }: VerticalProcessFlowProps) {
                 </p>
               )}
             </div>
+            <Image src={step.image} height={100} width={200} className="rounded-xl object-cover h-[200px] w-[360px]" alt="step-image"/>
           </div>
 
           {/* Curved Dashed Line to Next Step */}

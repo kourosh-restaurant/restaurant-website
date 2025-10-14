@@ -21,27 +21,32 @@ const processSteps = [
   {
     id: 1,
     title: "ثبت سفارش",
-    icon: <ClipboardCheck className="text-primary" width={40} height={50}/>
+    icon: <ClipboardCheck className="text-primary" width={40} height={50}/>,
+    image: "/slide-items/item1.jpg"
   },
   {
     id: 2,
     title: "پرداخت",
-    icon: <DollarSign className="text-primary" width={40} height={50}/>
+    icon: <DollarSign className="text-primary" width={40} height={50}/>,
+    image: "/slide-items/item2.jpg"
   },
   {
     id: 3,
     title: "تایید سفارش",
-    icon: <ListCheck className="text-primary" width={40} height={50}/>
+    icon: <ListCheck className="text-primary" width={40} height={50}/>,
+    image: "/slide-items/item3.jpg"
   },
   {
     id: 4,
     title: "آماده سازی سفارش",
-    icon: <Flame className="text-primary" width={40} height={50}/>
+    icon: <Flame className="text-primary" width={40} height={50}/>,
+    image: "/slide-items/item4.jpg"
   },
   {
     id: 5,
     title: "ارسال سفارش",
-    icon: <Truck className="text-primary" width={40} height={40}/>
+    icon: <Truck className="text-primary" width={40} height={40}/>,
+    image: "/slide-items/item5.jpg"
   },
 ]
 
