@@ -18,38 +18,38 @@ const Map = dynamic(() => import("@/components/map"), {
 export default function HomePage() {
 
 
-const processSteps = [
-  {
-    id: 1,
-    title: "ثبت سفارش",
-    icon: <ClipboardCheck className="text-primary" width={40} height={50}/>,
-    image: "/slide-items/item1.jpg"
-  },
-  {
-    id: 2,
-    title: "پرداخت",
-    icon: <DollarSign className="text-primary" width={40} height={50}/>,
-    image: "/slide-items/item2.jpg"
-  },
-  {
-    id: 3,
-    title: "تایید سفارش",
-    icon: <ListCheck className="text-primary" width={40} height={50}/>,
-    image: "/slide-items/item3.jpg"
-  },
-  {
-    id: 4,
-    title: "آماده سازی سفارش",
-    icon: <Flame className="text-primary" width={40} height={50}/>,
-    image: "/slide-items/item4.jpg"
-  },
-  {
-    id: 5,
-    title: "ارسال سفارش",
-    icon: <Truck className="text-primary" width={40} height={40}/>,
-    image: "/slide-items/item5.jpg"
-  },
-]
+  const processSteps = [
+    {
+      id: 1,
+      title: "ثبت سفارش",
+      icon: <ClipboardCheck className="text-primary" width={40} height={50} />,
+      image: "/slide-items/item1.jpg"
+    },
+    {
+      id: 2,
+      title: "پرداخت",
+      icon: <DollarSign className="text-primary" width={40} height={50} />,
+      image: "/slide-items/item2.jpg"
+    },
+    {
+      id: 3,
+      title: "تایید سفارش",
+      icon: <ListCheck className="text-primary" width={40} height={50} />,
+      image: "/slide-items/item3.jpg"
+    },
+    {
+      id: 4,
+      title: "آماده سازی سفارش",
+      icon: <Flame className="text-primary" width={40} height={50} />,
+      image: "/slide-items/item4.jpg"
+    },
+    {
+      id: 5,
+      title: "ارسال سفارش",
+      icon: <Truck className="text-primary" width={40} height={40} />,
+      image: "/slide-items/item5.jpg"
+    },
+  ]
 
 
 
@@ -87,23 +87,23 @@ const processSteps = [
             <p className="max-w-96 tracking-wide leading-8 text-md sm:text-lg font-semibold">رستوران کوروش با افتخار ارائه‌دهنده‌ی غذاهای اصیل ایرانی با بالاترین کیفیت و طعمی ماندگار است. ما با استفاده از مواد اولیه تازه و مرغوب، غذاهایی تهیه می‌کنیم که هم خوش‌طعم‌اند و هم سالم. هدف ما، خلق تجربه‌ای دل‌انگیز از هر وعده غذایی برای شماست — چه در محیط گرم و صمیمی رستوران ما غذا میل کنید، چه سفارش خود را به‌صورت بیرون‌بر دریافت کنید.</p>
           </div>
           <div className="bg-primary pr-4 hover:pr-8 duration-200 rounded-xl">
-            <Image 
-              className="rounded-lg backdrop:opacity-25" 
-              src={"/caesar-salad.png"} 
-              height={500} 
-              width={300} 
+            <Image
+              className="rounded-lg backdrop:opacity-25"
+              src={"/caesar-salad.png"}
+              height={500}
+              width={300}
               alt="caesar-salad-image"
             />
           </div>
         </section>
 
-        <section className="flex justify-around items-start mt-20 flex-col sm:flex-row gap-8">
+        <section className="flex justify-around items-start mt-20 flex-col-reverse sm:flex-row gap-8">
           <div className="bg-primary pr-4 hover:pr-8 duration-200 rounded-xl">
-            <Image 
-              className="rounded-lg backdrop:opacity-25" 
-              src={"/kebab.avif"} 
+            <Image
+              className="rounded-lg backdrop:opacity-25"
+              src={"/kebab.avif"}
               height={500}
-              width={300} 
+              width={300}
               alt="lamb-shish-kebab-image"
             />
           </div>
@@ -126,13 +126,13 @@ const processSteps = [
         <section className="">
           <h3 className="text-3xl font-bold text-primary py-5">با افتخار</h3>
           <ParagraphLoadMore
-          text="رستوران کوروش نوشهر یکی از بهترین رستوران‌های مازندران در تهیه و سرو غذاهای اصیل ایرانی و محلی است. ما با تکیه بر تجربه‌ی چندین ساله در آشپزی و استفاده از مواد اولیه‌ی تازه شمال کشور، طعمی بی‌نظیر و متفاوت را برای شما به ارمغان می‌آوریم. در آشپزخانه کوروش، کیفیت و رضایت مشتری اولویت اصلی ماست؛ از برنج معطر شمالی گرفته تا گوشت تازه و سبزیجات محلی، همه با دقت انتخاب می‌شوند تا بهترین طعم را تجربه کنید.
+            text="رستوران کوروش نوشهر یکی از بهترین رستوران‌های مازندران در تهیه و سرو غذاهای اصیل ایرانی و محلی است. ما با تکیه بر تجربه‌ی چندین ساله در آشپزی و استفاده از مواد اولیه‌ی تازه شمال کشور، طعمی بی‌نظیر و متفاوت را برای شما به ارمغان می‌آوریم. در آشپزخانه کوروش، کیفیت و رضایت مشتری اولویت اصلی ماست؛ از برنج معطر شمالی گرفته تا گوشت تازه و سبزیجات محلی، همه با دقت انتخاب می‌شوند تا بهترین طعم را تجربه کنید.
           اگر به دنبال غذای بیرون‌بر در نوشهر هستید، رستوران کوروش انتخابی مطمئن و خوش‌طعم است. ما با سرویس سفارش آنلاین غذا، امکان انتخاب و ثبت سفارش را برای شما آسان کرده‌ایم. تنها با چند کلیک می‌توانید غذای دلخواه خود را از منوی متنوع کوروش انتخاب کنید و در کمترین زمان، تازه و گرم درب منزل یا محل کارتان تحویل بگیرید. ما تضمین می‌کنیم که طعم و کیفیت غذا مانند سرو در رستوران باقی بماند.
           آشپزخانه کوروش نوشهر ترکیبی از هنر آشپزی ایرانی با سبک مدرن پخت است. غذاهای ما، از چلوکباب، خورشت قورمه‌سبزی و فسنجان گرفته تا انواع فست‌فود و غذاهای دریایی شمالی، با دقت و ظرافت طبخ می‌شوند. ما به طعم اصیل و عطر طبیعی غذا اهمیت می‌دهیم و با رعایت کامل استانداردهای بهداشتی، وعده‌ای سالم و خوش‌طعم برای شما فراهم می‌کنیم.
           در رستوران کوروش نوشهر، علاوه بر سرو غذا در محیطی دل‌نشین و خانوادگی، امکان پذیرش سفارشات گروهی، مهمانی‌ها و مراسم خاص نیز وجود دارد. تیم ما آماده است تا غذاهایی باکیفیت و متناسب با سلیقه‌ی شما را برای جشن‌ها و گردهمایی‌هایتان آماده کند. با انتخاب رستوران کوروش نوشهر، طعم اصالت ایرانی را در کنار طبیعت زیبای مازندران تجربه کنید."
-          previewLength={500}
-          className="text-center tracking-wide"
-        />
+            previewLength={500}
+            className="text-center tracking-wide"
+          />
         </section>
 
         <section className="mt-20">
