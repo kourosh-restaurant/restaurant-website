@@ -81,16 +81,14 @@ export function VerticalProcessFlow({ steps }: VerticalProcessFlowProps) {
             {/* Circle Marker */}
             <div className="relative flex-shrink-0">
               <div
-                className={`relative z-10 flex h-16 w-16 items-center justify-center rounded-full border-4 transition-all duration-500 ${
-                  index <= activeStep
-                    ? "border-primary bg-primary shadow-lg shadow-primary/30"
-                    : "border-border bg-background"
-                }`}
+                className={`relative z-10 flex h-16 w-16 items-center justify-center rounded-full border-4 transition-all duration-500 ${index <= activeStep
+                  ? "border-primary bg-primary shadow-lg shadow-primary/30"
+                  : "border-border bg-background"
+                  }`}
               >
                 <span
-                  className={`text-lg font-bold transition-colors duration-500 ${
-                    index <= activeStep ? "text-primary-foreground" : "text-muted-foreground"
-                  }`}
+                  className={`text-lg font-bold transition-colors duration-500 ${index <= activeStep ? "text-primary-foreground" : "text-muted-foreground"
+                    }`}
                 >
                   {step.id}
                 </span>
@@ -108,23 +106,21 @@ export function VerticalProcessFlow({ steps }: VerticalProcessFlowProps) {
             {/* Step Text */}
             <div className="flex gap-4 pt-3 justify-center items-center">
               <h3
-                className={`text-2xl font-semibold transition-all duration-500 ${
-                  index <= activeStep ? "text-foreground" : "text-muted-foreground"
-                }`}
+                className={`text-2xl font-semibold transition-all duration-500 ${index <= activeStep ? "text-foreground" : "text-muted-foreground"
+                  }`}
               >
                 {step.title}
               </h3>
               {step.icon && (
                 <p
-                  className={`mt-2 transition-all duration-500 ${
-                    index <= activeStep ? "text-muted-foreground" : "text-muted-foreground/50"
-                  }`}
+                  className={`mt-2 transition-all duration-500 ${index <= activeStep ? "text-muted-foreground" : "text-muted-foreground/50"
+                    }`}
                 >
                   {step.icon}
                 </p>
               )}
             </div>
-            <Image src={step.image} height={100} width={200} className="rounded-xl object-cover h-[200px] w-[360px]" alt="step-image"/>
+            <Image src={step.image} height={100} width={200} className="hidden md:block rounded-xl object-cover h-[200px] w-[360px]" alt="step-image" />
           </div>
 
           {/* Curved Dashed Line to Next Step */}
