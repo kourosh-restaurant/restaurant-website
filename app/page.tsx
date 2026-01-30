@@ -8,6 +8,7 @@ import Image from "next/image";
 import { VerticalProcessFlow } from "@/components/vertical-process-flow";
 import ParagraphLoadMore from "@/components/paragraph-loadmore";
 import Contactus from "@/components/contactus";
+import Link from "next/link";
 
 
 
@@ -69,9 +70,9 @@ export default function HomePage() {
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
               </div>
               <p className="text-sm text-white">سفارش میپذیریم</p>
-              <Button variant={"default"} className="cursor-pointer">
+              <Link href={"menu"} className="cursor-pointer rounded-md bg-primary/90 hover:bg-primary/100 text-accent-foreground px-3 py-2">
                 منو رستوران
-              </Button>
+              </Link>
             </div>
           </div>
         </section>
