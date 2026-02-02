@@ -116,11 +116,11 @@ export default function SignUpPage() {
             {step === 'details' ? (
               <form onSubmit={handleSendOTP} className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="fullName">{t('Full Name', 'نام کامل')}</Label>
+                  <Label htmlFor="fullName">{t('Full Name', 'نام و نام خانوادگی')}</Label>
                   <Input
                     id="fullName"
                     type="text"
-                    placeholder={t('John Doe', 'علی محمدی') || ''}
+                    placeholder={t('John Doe', 'حسین قاسمی زاده') || ''}
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     className="h-12"

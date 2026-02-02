@@ -106,7 +106,7 @@ export default function LoginPage() {
                       placeholder={isRTL ? '۹۱۲۱۲۳۴۵۶۷' : '9121234567'}
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="text-lg h-12"
+                      className="text-lg h-12 pl-12"
                       dir="ltr"
                     />
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
@@ -114,7 +114,6 @@ export default function LoginPage() {
                     </span>
                   </div>
                 </div>
-
                 {error && (
                   <p className="text-sm text-destructive">{error}</p>
                 )}
