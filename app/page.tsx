@@ -1,6 +1,6 @@
 "use client"
 
-import { ClipboardCheck, DollarSign, Flame, ListCheck, Truck, UtensilsCrossed } from "lucide-react"
+import { ClipboardCheck, DollarSign, Flame, ListCheck, ShoppingBag, Store, Truck, UtensilsCrossed } from "lucide-react"
 import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button"
 import ImageCarousel from "@/components/card-swiper";
@@ -9,6 +9,8 @@ import { VerticalProcessFlow } from "@/components/vertical-process-flow";
 import ParagraphLoadMore from "@/components/paragraph-loadmore";
 import Contactus from "@/components/contactus";
 import Link from "next/link";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Navbar } from "@/components/navbar";
 
 
 
@@ -56,6 +58,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
+      <Navbar />
       <main className="container mx-auto px-4 py-8">
         <section className="mb-8 bg-[url(/banner.jpg)] bg-cover rounded-xl">
           <div className="backdrop-brightness-45 p-12 rounded-xl flex flex-col gap-5">
@@ -97,6 +100,47 @@ export default function HomePage() {
             />
           </div>
         </section>
+
+        {/* Features Section */}
+        <div className="container py-16 my-12">
+          <div className="grid gap-6 md:grid-cols-3">
+            <Card className="border-0 shadow-md">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
+                  <ShoppingBag className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle>راحتی در سفارش</CardTitle>
+                <CardDescription>
+                  با رابط کاربری ساده ما، در عرض چند ثانیه منوی ما را مرور کنید و سفارش دهید.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="border-0 shadow-md">
+              <CardHeader>
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-2">
+                  <Truck className="h-6 w-6 text-accent" />
+                </div>
+                <CardTitle>پیگیری در لحظه</CardTitle>
+                <CardDescription>
+                  وضعیت سفارش خود را از آشپزخانه تا تحویل در لحظه پیگیری کنید.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="border-0 shadow-md">
+              <CardHeader>
+                <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-2">
+                  <Store className="h-6 w-6 text-emerald-600" />
+                </div>
+                <CardTitle>تازه و مطمئن</CardTitle>
+                <CardDescription>
+                  از غذاهای سنتی ایرانی که با مواد اولیه تازه و باکیفیت تهیه می‌شوند، لذت ببرید.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
 
         <section className="flex justify-around items-start mt-20 flex-col-reverse sm:flex-row gap-8">
           <div className="bg-primary pr-4 hover:pr-8 duration-200 rounded-xl">
