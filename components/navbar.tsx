@@ -54,7 +54,7 @@ export function Navbar() {
             </Link>
           </Button>
           <Button variant="outline" size="sm" asChild className="hidden md:flex bg-transparent">
-            <Link href="/login">
+            <Link href="/auth/login">
               <User className="mr-2 h-4 w-4" />
               ورود
             </Link>
