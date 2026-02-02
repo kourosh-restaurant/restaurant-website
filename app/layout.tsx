@@ -9,8 +9,8 @@ import { LanguageProvider } from '@/lib/language-context'
 
 
 export const metadata: Metadata = {
-  title: 'koroush Restourant App',
-  description: 'Restourant that make food with love.',
+  title: 'رستوران و آشتپزخانه کوروش',
+  description: 'سفارش غذای آنلاین کوروش',
   authors: [
     { name: 'Hosein Ghasemizade' }
   ],
