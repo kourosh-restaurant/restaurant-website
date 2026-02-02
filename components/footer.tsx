@@ -63,7 +63,7 @@ export function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-                    <p>&copy; {new Date().getFullYear()}  حقوق مادی و معنوی متعلق به <span className="text-primary">رستوران کوروش</span> است.</p>
+                    <p>&copy;{new Date().getFullYear()}  حقوق مادی و معنوی متعلق به <span className="text-primary">رستوران کوروش</span> است.</p>
                 </div>
             </div>
         </footer>
