@@ -5,6 +5,7 @@ import './globals.css'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { CartProvider } from '@/context/CartContext'
+import { LanguageProvider } from '@/lib/language-context'
 
 
 export const metadata: Metadata = {
@@ -39,10 +40,11 @@ export default function RootLayout({
     <html lang="fa" dir='rtl'>
       <body className={`${IRANSansXV.variable}`}>
         <CartProvider>
-          <Navbar />
-          {children}
-          <Analytics />
-          <Footer />
+          <LanguageProvider>
+            {children}
+            <Analytics />
+            <Footer />
+          </LanguageProvider>
         </CartProvider>
       </body>
     </html>
