@@ -33,7 +33,96 @@ export function CourierDashboardClient({
   todayDeliveriesCount,
   activeDeliveriesCount 
 }: CourierDashboardClientProps) {
-  
+  const { t, language } = useLanguage()
+  const [orders, setOrders] = useState(initialOrders)
+  const supabase = createClient()
+
+  // Real-time subscription for order updates
+  useEffect(() => {
+    const channel = supabase
+      .channel('courier-orders')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'orders',
+          filter: `courier_id=eq.${profile.id}`,
+        },
+        async (payload) => {
+          if (payload.eventType === 'INSERT' || payload.eventType === 'UPDATE') {
+            if (['on_the_way', 'ready'].includes(payload.new.status as string)) {
+              const { data } = await supabase
+                .from('orders')
+                .select(`
+                  *,
+                  restaurant:restaurants(id, name, name_fa, address),
+                  customer:profiles!orders_customer_id_fkey(id, full_name, phone),
+                  order_items:order_items(
+                    id,
+                    quantity,
+                    unit_price,
+                    menu_item:menu_items(id, name, name_fa)
+                  )
+                `)
+                .eq('id', payload.new.id)
+                .single()
+
+              if (data) {
+                setOrders(prev => {
+                  const exists = prev.find(o => o.id === data.id)
+                  if (exists) {
+                    return prev.map(o => o.id === data.id ? data : o)
+                  }
+                  return [data, ...prev]
+                })
+              }
+            } else {
+              // Remove from list if delivered
+              setOrders(prev => prev.filter(o => o.id !== payload.new.id))
+            }
+          }
+        }
+      )
+      .subscribe()
+
+    return () => {
+      supabase.removeChannel(channel)
+    }
+  }, [profile.id, supabase])
+
+  const markDelivered = async (orderId: string) => {
+    await supabase
+      .from('orders')
+      .update({ 
+        status: 'delivered', 
+        updated_at: new Date().toISOString() 
+      })
+      .eq('id', orderId)
+
+    setOrders(prev => prev.filter(o => o.id !== orderId))
+  }
+
+  const formatPrice = (price: number) => {
+    if (language === 'fa') {
+      return `${price.toLocaleString('fa-IR')} تومان`
+    }
+    return `${price.toLocaleString()} Toman`
+  }
+
+  const formatDate = (date: string) => {
+    const d = new Date(date)
+    if (language === 'fa') {
+      return d.toLocaleTimeString('fa-IR', {
+        hour: '2-digit',
+        minute: '2-digit',
+      })
+    }
+    return d.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+    })
+  }
 
   return (
     <div className="space-y-6">
