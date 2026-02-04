@@ -226,7 +226,22 @@ export function CourierDashboardClient({
                   <Separator />
 
                   
-
+                {/* Total & Actions */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-muted-foreground">{t('Total', 'جمع کل')}</p>
+                      <p className="text-lg font-bold text-primary">
+                        {formatPrice(order.total_amount)}
+                      </p>
+                    </div>
+                    <Button
+                      onClick={() => markDelivered(order.id)}
+                      className="gap-2"
+                    >
+                      <CheckCircle2 className="h-4 w-4" />
+                      {t('Mark Delivered', 'تحویل داده شد')}
+                    </Button>
+                  </div>
                   <Separator />
 
                   
