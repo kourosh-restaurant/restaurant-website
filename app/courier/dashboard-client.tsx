@@ -209,7 +209,19 @@ export function CourierDashboardClient({
                     </div>
                   </div>
 
-                  
+                {/* Order Items Summary */}
+                  <div className="space-y-1">
+                    <p className="text-sm font-medium text-muted-foreground">
+                      {t('Order Items', 'آیتم‌های سفارش')}
+                    </p>
+                    {order.order_items?.map((item: any) => (
+                      <div key={item.id} className="flex justify-between text-sm">
+                        <span>
+                          {item.quantity}x {t(item.menu_item?.name, item.menu_item?.name_fa)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
 
                   <Separator />
 
