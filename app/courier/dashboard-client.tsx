@@ -199,7 +199,15 @@ export function CourierDashboardClient({
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  
+                  {/* Restaurant */}
+                  <div className="flex items-start gap-3 p-3 bg-muted/50 rounded-lg">
+                    <Store className="h-5 w-5 text-muted-foreground mt-0.5" />
+                    <div>
+                      <p className="font-medium text-sm">{t('Pick up from', 'دریافت از')}</p>
+                      <p className="font-medium">{t(order.restaurant?.name, order.restaurant?.name_fa)}</p>
+                      <p className="text-sm text-muted-foreground">{order.restaurant?.address}</p>
+                    </div>
+                  </div>
 
                   
 
