@@ -48,6 +48,8 @@ export interface MenuItem {
   is_available: boolean
   created_at: string
   category?: Category
+  onAddToCart: () => void
+  image: string
 }
 
 export interface Order {
