@@ -58,7 +58,7 @@ export function AdminDashboardClient({
           table: 'orders',
           filter: `restaurant_id=eq.${restaurant.id}`,
         },
-        async (payload) => {
+        async (payload: { eventType: string; new: { id: any } }) => {
           if (payload.eventType === 'INSERT') {
             // Fetch complete order with relations
             const { data } = await supabase
