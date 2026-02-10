@@ -2,14 +2,16 @@
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react"
 import { createClient } from "@/lib/supabase/client"
+import { Profile } from '@/lib/types'
 import type { User } from "@supabase/supabase-js"
 
 interface AuthContextType {
     user: User | null
     isLoading: boolean
+    profile: Profile | null
+    signOut: () => Promise<void>
     login: (email: string, password: string) => Promise<void>
     signup: (email: string, password: string) => Promise<void>
-    logout: () => Promise<void>
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
@@ -18,7 +20,27 @@ const supabase = createClient()
 
 export function AuthProvider({ children }: { children: ReactNode }) {
     const [user, setUser] = useState<User | null>(null)
+    const [profile, setProfile] = useState<Profile | null>(null)
     const [isLoading, setIsLoading] = useState(true)
+
+const fetchProfile = async (userId: string) => {
+    const { data } = await supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', userId)
+      .single()
+    
+    if (data) {
+      setProfile(data as Profile)
+    }
+  }
+
+  const refreshProfile = async () => {
+    if (user) {
+      await fetchProfile(user.id)
+    }
+  }
+
 
     useEffect(() => {
         const checkSession = async () => {
@@ -67,15 +89,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
     }
 
-    const logout = async () => {
+    const signOut = async () => {
         const { error } = await supabase.auth.signOut()
         if (error) {
-            console.error("Logout error:", error)
+            console.error("signOut error:", error)
             throw error
         }
     }
 
-    return <AuthContext.Provider value={{ user, isLoading, login, signup, logout }}>{children}</AuthContext.Provider>
+    return <AuthContext.Provider value={{ user, isLoading, profile, login, signup, signOut  }}>{children}</AuthContext.Provider>
 }
 
 export function useAuth() {
