@@ -1,6 +1,6 @@
 'use client'
 
-import { useAuth } from '@/lib/auth-context'
+import { useAuth } from '@/lib/email-auth-context'
 import { useLanguage } from '@/lib/language-context'
 import { useCart } from '@/lib/cart-context'
 import { Button } from '@/components/ui/button'
@@ -24,7 +24,7 @@ interface AppHeaderProps {
 }
 
 export function AppHeader({ showCart = true, onCartClick }: AppHeaderProps) {
-  const { user, profile, signOut } = useAuth()
+  const { user, profile, signOut, login, signup } = useAuth()
   const { language, setLanguage, t, isRTL } = useLanguage()
   const { totalItems } = useCart()
   const router = useRouter()
